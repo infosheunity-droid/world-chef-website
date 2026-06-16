@@ -341,7 +341,7 @@ nav .logo img {
 }
 
 .service-card img {
-    display: none; /* Keeps structural text focus clear like flyer layout blueprint */
+    display: none;
 }
 
 .service-card h3 {
@@ -479,6 +479,17 @@ a.contact-item:hover {
     cursor: default;
 }
 
+/* Operating Hours Special Span Layout */
+.hours-block {
+    grid-column: span 2;
+    border: 1px solid var(--gold-glow) !important;
+    background-color: rgba(244, 186, 66, 0.02);
+}
+
+.hours-block i {
+    font-size: 1.4rem;
+}
+
 /* ==========================================================================
    9. FLOATING STICKY ACTION BAR
    ========================================================================== */
@@ -517,7 +528,7 @@ a.contact-item:hover {
    ========================================================================== */
 @media (max-width: 1024px) {
     .main-container {
-        grid-template-columns: 1fr; /* Stack into single column grid layout */
+        grid-template-columns: 1fr;
         gap: 40px;
         padding: 0 20px;
     }
