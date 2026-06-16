@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. VARIABLES & CORE ARCHITECTURE (Matching world chef.jpeg Palette)
+   1. VARIABLES & CORE ARCHITECTURE (Matching Luxury Palette)
    ========================================================================== */
 :root {
     --bg-darker: #0B0B0C;       /* Luxury deep canvas dark */
@@ -98,7 +98,7 @@ nav .logo img {
    3. HERO BANNER
    ========================================================================== */
 .hero {
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
     background: radial-gradient(circle at center, rgba(30,30,35,0.4) 0%, var(--bg-darker) 70%);
 }
@@ -109,13 +109,16 @@ nav .logo img {
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 5px;
+    color: var(--text-white);
 }
 
 .hero-subtitle {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.8rem;
-    color: var(--text-white);
+    font-size: 1.4rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: lowercase;
     margin-bottom: 40px;
 }
 
@@ -158,7 +161,7 @@ nav .logo img {
 }
 
 /* ==========================================================================
-   4. INTERACTIVE SPLIT SCREEN SYSTEM (AS SEEN IN PREVIEW)
+   4. INTERACTIVE SPLIT SCREEN SYSTEM
    ========================================================================== */
 .main-container {
     display: grid;
@@ -177,6 +180,14 @@ nav .logo img {
     margin-bottom: 35px;
     letter-spacing: 1px;
     text-align: left;
+}
+
+.section-title-right {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
 /* ==========================================================================
@@ -340,10 +351,6 @@ nav .logo img {
     overflow: hidden;
 }
 
-.service-card img {
-    display: none;
-}
-
 .service-card h3 {
     font-family: 'Cinzel', serif;
     font-size: 1.15rem;
@@ -369,7 +376,7 @@ nav .logo img {
 }
 
 /* ==========================================================================
-   7. RIGHT SIDE: WHY CHOOSE US (BRAND CONFIGURATIONS)
+   7. RIGHT SIDE: WHY CHOOSE US
    ========================================================================== */
 .why-choose-us {
     margin-bottom: 50px;
@@ -419,7 +426,51 @@ nav .logo img {
 }
 
 /* ==========================================================================
-   8. RIGHT SIDE: CONTACT METHOD CODES
+   8. NEW: POLICIES COMPONENT (Order & Delivery Rules)
+   ========================================================================== */
+.policies-section {
+    margin-bottom: 50px;
+}
+
+.policy-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--gold-glow);
+    border-radius: 6px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.policy-item h5 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-white);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.policy-item h5 i {
+    color: var(--gold);
+}
+
+.policy-item p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.policy-item p strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   9. RIGHT SIDE: CONTACT METHOD CODES & HOURS
    ========================================================================== */
 .contact-section h2 {
     font-family: 'Cinzel', serif;
@@ -491,7 +542,7 @@ a.contact-item:hover {
 }
 
 /* ==========================================================================
-   9. FLOATING STICKY ACTION BAR
+   10. FLOATING STICKY ACTION BAR
    ========================================================================== */
 .sticky-quote-bar {
     position: fixed;
@@ -524,7 +575,7 @@ a.contact-item:hover {
 }
 
 /* ==========================================================================
-   10. MEDIA QUERIES (FULL RESPONSIVE SYSTEM)
+   11. MEDIA QUERIES (FULL RESPONSIVE SYSTEM)
    ========================================================================== */
 @media (max-width: 1024px) {
     .main-container {
@@ -560,7 +611,7 @@ a.contact-item:hover {
     }
 
     .hero-subtitle {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .hero-actions {
