@@ -1,0 +1,570 @@
+/* ==========================================================================
+   1. VARIABLES & CORE ARCHITECTURE (Matching world chef.jpeg Palette)
+   ========================================================================== */
+:root {
+    --bg-darker: #0B0B0C;       /* Luxury deep canvas dark */
+    --bg-card: #121214;         /* Sleek component background */
+    --gold: #F4BA42;            /* Signature Warm Gold accent */
+    --gold-hover: #E2AA33;      /* Deep gold button active states */
+    --gold-glow: rgba(244, 186, 66, 0.15);
+    --text-white: #FFFFFF;      /* Clean contrast text */
+    --text-muted: #A5A5A7;     /* Soft readable description gray */
+    --wa-green: #25D366;        /* Official WhatsApp messaging green */
+    --wa-hover: rgba(37, 211, 102, 0.1);
+    --border-light: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-darker);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+    background-color: rgba(11, 11, 12, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gold-glow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 40px;
+}
+
+nav .logo img {
+    height: 65px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-cta-btn {
+    text-decoration: none;
+    background-color: var(--gold);
+    color: var(--bg-darker);
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.nav-cta-btn:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   3. HERO BANNER
+   ========================================================================== */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(30,30,35,0.4) 0%, var(--bg-darker) 70%);
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--text-white);
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--bg-darker);
+    border: 1px solid var(--gold);
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-hover);
+    border-color: var(--gold-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--text-white);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   4. INTERACTIVE SPLIT SCREEN SYSTEM (AS SEEN IN PREVIEW)
+   ========================================================================== */
+.main-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Asymmetric split structure */
+    max-width: 1400px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
+    gap: 50px;
+    align-items: start;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* ==========================================================================
+   5. LEFT SIDE: SIGNATURE DISHES CARD ARCHITECTURE
+   ========================================================================== */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.menu-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--gold-glow);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.dish-img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.dish-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .dish-img-container img {
+    transform: scale(1.05);
+}
+
+.dish-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.dish-info h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.dish-desc {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.dish-price {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.dish-price span {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/* Three-way Call-To-Action Framework */
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.action-btn span {
+    text-transform: none;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.online-btn {
+    background-color: var(--gold);
+    color: var(--bg-darker);
+    border: 1px solid var(--gold);
+}
+
+.online-btn:hover {
+    background-color: var(--gold-hover);
+    border-color: var(--gold-hover);
+}
+
+.wa-btn {
+    background-color: transparent;
+    color: var(--wa-green);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.wa-btn:hover {
+    background-color: var(--wa-hover);
+    border-color: var(--wa-green);
+}
+
+.call-btn {
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--border-light);
+}
+
+.call-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-white);
+}
+
+/* ==========================================================================
+   6. RIGHT SIDE: SERVICES COMPONENT
+   ========================================================================== */
+.services-block-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 50px;
+    margin-top: 59px; /* Aligns visually with the grid layout title */
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--gold-glow);
+    border-radius: 6px;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card img {
+    display: none; /* Keeps structural text focus clear like flyer layout blueprint */
+}
+
+.service-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    color: var(--text-white);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    max-width: 85%;
+}
+
+.service-icon {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    font-size: 1.8rem;
+    color: var(--gold);
+    opacity: 0.4;
+}
+
+/* ==========================================================================
+   7. RIGHT SIDE: WHY CHOOSE US (BRAND CONFIGURATIONS)
+   ========================================================================== */
+.why-choose-us {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.script-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 30px;
+}
+
+.value-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 40px;
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.value-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.value-item h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.value-item p {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   8. RIGHT SIDE: CONTACT METHOD CODES
+   ========================================================================== */
+.contact-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.contact-item {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-white);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-item i {
+    font-size: 1.3rem;
+    color: var(--gold);
+}
+
+.contact-item span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.contact-item small {
+    text-transform: none;
+    color: var(--text-muted);
+    font-weight: 400;
+    display: block;
+    margin-top: 2px;
+}
+
+a.contact-item:hover {
+    background-color: rgba(255,255,255,0.02);
+    border-color: var(--gold);
+}
+
+.non-link {
+    cursor: default;
+}
+
+/* ==========================================================================
+   9. FLOATING STICKY ACTION BAR
+   ========================================================================== */
+.sticky-quote-bar {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+}
+
+.quote-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background-color: var(--gold);
+    color: var(--bg-darker);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(244, 186, 66, 0.3);
+    transition: all 0.3s ease;
+}
+
+.quote-btn:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 186, 66, 0.4);
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (FULL RESPONSIVE SYSTEM)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: 1fr; /* Stack into single column grid layout */
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .services-block-container {
+        margin-top: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .value-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
