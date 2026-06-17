@@ -1,41 +1,46 @@
 /* ==========================================================================
-   1. VARIABLES & CORE ARCHITECTURE (Matching Luxury Palette)
+   1. GLOBAL STYLES & VARIABLES (UPDATED FROM world chef.jpeg)
    ========================================================================== */
 :root {
-    --bg-darker: #0B0B0C;       /* Luxury deep canvas dark */
-    --bg-card: #121214;         /* Sleek component background */
-    --gold: #F4BA42;            /* Signature Warm Gold accent */
-    --gold-hover: #E2AA33;      /* Deep gold button active states */
-    --gold-glow: rgba(244, 186, 66, 0.15);
-    --text-white: #FFFFFF;      /* Clean contrast text */
-    --text-muted: #A5A5A7;     /* Soft readable description gray */
-    --wa-green: #25D366;        /* Official WhatsApp messaging green */
-    --wa-hover: rgba(37, 211, 102, 0.1);
-    --border-light: rgba(255, 255, 255, 0.1);
+    --bg-dark: #0a0a0a;          /* Deep near-black background from the flyer */
+    --card-bg: #121212;          /* Slightly lighter black for containers/cards */
+    --primary-orange-gold: #f3ad3a; /* The vibrant warm gold used for primary CTA buttons */
+    --accent-gold: #c5a880;      /* Elegant muted gold used for script fonts and borders */
+    --border-gold: rgba(243, 173, 58, 0.25); /* Subtle glowing gold border for elements */
+    --text-white: #ffffff;       /* Main crisp white headings */
+    --text-muted: #b3b3b3;       /* Soft gray for readable body text */
+    --whatsapp-green: #25d366;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-darker);
-    color: var(--text-white);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-muted);
+    background-color: var(--bg-dark); /* Keeps the canvas dark like the flyer */
     line-height: 1.6;
-    overflow-x: hidden;
+    padding-bottom: 70px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATION
+   2. NAVIGATION HEADER
    ========================================================================== */
 header {
-    background-color: rgba(11, 11, 12, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--gold-glow);
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -47,13 +52,13 @@ nav {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 12px 40px;
+    padding: 15px 40px;
 }
 
 nav .logo img {
-    height: 65px;
+    height: 60px;
     width: auto;
-    display: block;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -63,173 +68,160 @@ nav .logo img {
 }
 
 .nav-links a {
-    text-decoration: none;
     color: var(--text-white);
-    font-size: 0.85rem;
     font-weight: 600;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+    color: var(--primary-orange-gold);
 }
 
 .nav-cta-btn {
-    text-decoration: none;
-    background-color: var(--gold);
-    color: var(--bg-darker);
+    background-color: transparent;
+    color: var(--primary-orange-gold);
+    border: 1px solid var(--primary-orange-gold);
     padding: 10px 22px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    border-radius: 20px; /* Rounded pill style from the flyer's top-right corner */
+    font-weight: 600;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 
 .nav-cta-btn:hover {
-    background-color: var(--gold-hover);
-    transform: translateY(-1px);
+    background-color: var(--primary-orange-gold);
+    color: var(--bg-dark);
 }
 
 /* ==========================================================================
-   3. HERO BANNER
+   3. HERO SECTION
    ========================================================================== */
 .hero {
-    padding: 120px 20px;
+    background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.85)), url('image/dish-2.jpg') no-repeat center center/cover;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background: radial-gradient(circle at center, rgba(30,30,35,0.4) 0%, var(--bg-darker) 70%);
+    color: var(--text-white);
+    padding: 0 20px;
 }
 
 .hero-title {
     font-family: 'Cinzel', serif;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
+    letter-spacing: 3px;
     color: var(--text-white);
+    text-transform: uppercase;
 }
 
 .hero-subtitle {
     font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     font-style: italic;
-    font-size: 1.4rem;
-    color: var(--gold);
-    letter-spacing: 1px;
-    text-transform: lowercase;
-    margin-bottom: 40px;
+    color: var(--accent-gold); /* Muted gold script accent */
+    margin-bottom: 35px;
 }
 
 .hero-actions {
     display: flex;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
 }
 
 .btn {
-    text-decoration: none;
-    padding: 14px 35px;
-    border-radius: 4px;
-    font-size: 0.85rem;
+    padding: 14px 30px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-radius: 4px;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
 }
 
 .btn-gold {
-    background-color: var(--gold);
-    color: var(--bg-darker);
-    border: 1px solid var(--gold);
+    background-color: var(--primary-orange-gold);
+    color: var(--bg-dark);
 }
 
 .btn-gold:hover {
-    background-color: var(--gold-hover);
-    border-color: var(--gold-hover);
+    background-color: #df9825;
 }
 
 .btn-outline {
-    background-color: transparent;
-    color: var(--text-white);
     border: 1px solid var(--text-white);
+    color: var(--text-white);
+    background-color: rgba(255,255,255,0.02);
 }
 
 .btn-outline:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--text-white);
+    color: var(--bg-dark);
 }
 
 /* ==========================================================================
-   4. INTERACTIVE SPLIT SCREEN SYSTEM
+   4. TWO-COLUMN INTERACTIVE CONTENT GRID
    ========================================================================== */
 .main-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Asymmetric split structure */
-    max-width: 1400px;
-    margin: 0 auto 100px auto;
-    padding: 0 40px;
+    grid-template-columns: 1fr 450px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px;
     gap: 50px;
-    align-items: start;
 }
 
 .section-title {
     font-family: 'Cinzel', serif;
-    font-size: 1.6rem;
-    color: var(--gold);
+    font-size: 2rem;
+    color: var(--text-white);
+    border-bottom: 1px solid var(--border-gold);
+    padding-bottom: 15px;
     margin-bottom: 35px;
     letter-spacing: 1px;
-    text-align: left;
 }
 
 .section-title-right {
     font-family: 'Cinzel', serif;
     font-size: 1.4rem;
-    color: var(--gold);
-    margin-bottom: 25px;
-    letter-spacing: 1px;
+    color: var(--text-white);
+    margin-bottom: 20px;
 }
 
 /* ==========================================================================
-   5. LEFT SIDE: SIGNATURE DISHES CARD ARCHITECTURE
+   5. MENU GRID (VERTICAL & HORIZONTAL WRAPPING)
    ========================================================================== */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .menu-item {
-    background-color: var(--bg-card);
-    border: 1px solid var(--gold-glow);
-    border-radius: 6px;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .menu-item:hover {
-    transform: translateY(-4px);
-    border-color: var(--gold);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.dish-img-container {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
+    transform: translateY(-5px);
+    border-color: var(--primary-orange-gold); /* Subtle hover glow effect */
 }
 
 .dish-img-container img {
     width: 100%;
-    height: 100%;
+    height: 240px;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.menu-item:hover .dish-img-container img {
-    transform: scale(1.05);
+    display: block;
 }
 
 .dish-info {
@@ -240,35 +232,35 @@ nav .logo img {
 }
 
 .dish-info h3 {
-    font-size: 1.15rem;
+    color: var(--text-white);
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
+    margin-bottom: 8px;
 }
 
 .dish-desc {
     color: var(--text-muted);
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
     margin-bottom: 15px;
     flex-grow: 1;
 }
 
 .dish-price {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 15px;
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 0.95rem;
     margin-bottom: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 12px;
 }
 
 .dish-price span {
-    color: var(--gold);
+    color: var(--primary-orange-gold);
+    font-size: 1.2rem;
     font-weight: 700;
-    font-size: 1.05rem;
 }
 
-/* Three-way Call-To-Action Framework */
+/* Action CTA Buttons underneath images */
 .order-actions {
     display: flex;
     flex-direction: column;
@@ -276,208 +268,171 @@ nav .logo img {
 }
 
 .action-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    padding: 10px 0;
-    font-size: 0.75rem;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     border-radius: 4px;
+    letter-spacing: 0.5px;
     transition: all 0.2s ease;
 }
 
-.action-btn span {
-    text-transform: none;
-    font-weight: 400;
-    opacity: 0.8;
-}
-
 .online-btn {
-    background-color: var(--gold);
-    color: var(--bg-darker);
-    border: 1px solid var(--gold);
+    background-color: var(--primary-orange-gold);
+    color: var(--bg-dark);
 }
 
 .online-btn:hover {
-    background-color: var(--gold-hover);
-    border-color: var(--gold-hover);
+    background-color: #df9825;
 }
 
 .wa-btn {
     background-color: transparent;
-    color: var(--wa-green);
-    border: 1px solid rgba(37, 211, 102, 0.3);
+    border: 1px solid var(--whatsapp-green);
+    color: var(--whatsapp-green);
 }
 
 .wa-btn:hover {
-    background-color: var(--wa-hover);
-    border-color: var(--wa-green);
+    background-color: var(--whatsapp-green);
+    color: var(--text-white);
 }
 
 .call-btn {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.05);
     color: var(--text-white);
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .call-btn:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: var(--text-white);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ==========================================================================
-   6. RIGHT SIDE: SERVICES COMPONENT
+   6. RIGHT PANEL COMPONENTS (SERVICES, POLICIES, CONTACT)
    ========================================================================== */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Services Cards Block (Mirrors the gold border frames on the flyer) */
 .services-block-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin-bottom: 50px;
-    margin-top: 59px; /* Aligns visually with the grid layout title */
+    gap: 15px;
 }
 
 .service-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--gold-glow);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-gold);
+    padding: 22px;
     border-radius: 6px;
-    padding: 25px 30px;
-    display: flex;
-    flex-direction: column;
     position: relative;
-    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.service-card:hover {
+    border-color: var(--primary-orange-gold);
 }
 
 .service-card h3 {
-    font-family: 'Cinzel', serif;
+    color: var(--primary-orange-gold); /* Accent title color like flyer */
     font-size: 1.15rem;
-    color: var(--text-white);
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .service-card p {
-    color: var(--text-muted);
     font-size: 0.85rem;
+    color: var(--text-muted);
     max-width: 85%;
 }
 
 .service-icon {
     position: absolute;
-    right: 30px;
-    bottom: 20px;
-    font-size: 1.8rem;
-    color: var(--gold);
-    opacity: 0.4;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: rgba(243, 173, 58, 0.15);
 }
 
-/* ==========================================================================
-   7. RIGHT SIDE: WHY CHOOSE US
-   ========================================================================== */
+/* Why Choose Us Script Branding Component */
 .why-choose-us {
-    margin-bottom: 50px;
     text-align: center;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 30px 20px;
+    border-radius: 8px;
 }
 
 .script-title {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 1.8rem;
-    color: var(--gold);
-    margin-bottom: 30px;
+    color: var(--accent-gold);
+    margin-bottom: 25px;
 }
 
 .value-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 40px;
-}
-
-.value-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.value-icon {
-    font-size: 1.5rem;
-    color: var(--gold);
-    margin-bottom: 12px;
+    gap: 24px;
 }
 
 .value-item h4 {
-    font-size: 0.75rem;
-    font-weight: 700;
+    color: var(--text-white);
+    font-size: 1rem;
+    margin: 5px 0;
     text-transform: uppercase;
-    margin-bottom: 8px;
     letter-spacing: 0.5px;
 }
 
 .value-item p {
+    font-size: 0.85rem;
     color: var(--text-muted);
-    font-size: 0.7rem;
-    line-height: 1.4;
 }
 
-/* ==========================================================================
-   8. NEW: POLICIES COMPONENT (Order & Delivery Rules)
-   ========================================================================== */
-.policies-section {
-    margin-bottom: 50px;
+.value-icon {
+    color: var(--primary-orange-gold);
+    font-size: 1.3rem;
 }
 
+/* Policy Content Cards Area */
 .policy-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--gold-glow);
-    border-radius: 6px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--card-bg);
+}
+
+.policy-item {
+    margin-bottom: 20px;
+}
+
+.policy-item:last-child {
+    margin-bottom: 0;
 }
 
 .policy-item h5 {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    text-transform: uppercase;
-    color: var(--text-white);
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.policy-item h5 i {
-    color: var(--gold);
+    margin-bottom: 4px;
+    color: var(--primary-orange-gold);
 }
 
 .policy-item p {
+    font-size: 0.85rem;
     color: var(--text-muted);
-    font-size: 0.8rem;
-    line-height: 1.5;
 }
 
-.policy-item p strong {
-    color: var(--gold);
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   9. RIGHT SIDE: CONTACT METHOD CODES & HOURS
-   ========================================================================== */
+/* Contact block styles */
 .contact-section h2 {
     font-family: 'Cinzel', serif;
     font-size: 1.4rem;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
-    text-align: center;
+    color: var(--text-white);
+    margin-bottom: 20px;
 }
 
 .contact-grid {
@@ -487,109 +442,85 @@ nav .logo img {
 }
 
 .contact-item {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    text-decoration: none;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--text-white);
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 .contact-item i {
     font-size: 1.3rem;
-    color: var(--gold);
-}
-
-.contact-item span {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-align: center;
-}
-
-.contact-item small {
-    text-transform: none;
-    color: var(--text-muted);
-    font-weight: 400;
-    display: block;
-    margin-top: 2px;
+    color: var(--primary-orange-gold);
 }
 
 a.contact-item:hover {
+    border-color: var(--primary-orange-gold);
     background-color: rgba(255,255,255,0.02);
-    border-color: var(--gold);
 }
 
 .non-link {
     cursor: default;
 }
 
-/* Operating Hours Special Span Layout */
-.hours-block {
-    grid-column: span 2;
-    border: 1px solid var(--gold-glow) !important;
-    background-color: rgba(244, 186, 66, 0.02);
+.non-link span small, .hours-block span small {
+    color: var(--text-muted);
+    font-weight: 400;
 }
 
-.hours-block i {
-    font-size: 1.4rem;
+.hours-block {
+    grid-column: span 2;
 }
 
 /* ==========================================================================
-   10. FLOATING STICKY ACTION BAR
+   7. FLOATING QUICK ACTION ACCESSIBILITY STICKY BAR
    ========================================================================== */
 .sticky-quote-bar {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #050505;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+    z-index: 999;
 }
 
 .quote-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    background-color: var(--gold);
-    color: var(--bg-darker);
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 0.8rem;
+    background-color: var(--primary-orange-gold);
+    color: var(--bg-dark);
+    padding: 10px 40px;
     font-weight: 700;
+    border-radius: 4px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(244, 186, 66, 0.3);
-    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
 }
 
 .quote-btn:hover {
-    background-color: var(--gold-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(244, 186, 66, 0.4);
+    background-color: #df9825;
 }
 
 /* ==========================================================================
-   11. MEDIA QUERIES (FULL RESPONSIVE SYSTEM)
+   8. MEDIA QUERIES (RESPONSIVENESS CAPABILITIES)
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .main-container {
         grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 0 20px;
-    }
-    
-    .services-block-container {
-        margin-top: 20px;
-    }
-
-    .hero-title {
-        font-size: 2.6rem;
     }
 }
 
@@ -597,36 +528,30 @@ a.contact-item:hover {
     nav {
         flex-direction: column;
         gap: 15px;
-        padding: 15px 20px;
+        padding: 15px;
     }
-    
     .nav-links {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .hero-title {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
     }
-
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
-
     .hero-actions {
         flex-direction: column;
         gap: 10px;
-        align-items: center;
     }
-
-    .btn {
-        width: 100%;
-        max-width: 300px;
+    .main-container {
+        padding: 15px;
     }
-
-    .value-row {
+    .contact-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+    }
+    .hours-block {
+        grid-column: span 1;
     }
 }
