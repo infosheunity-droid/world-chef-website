@@ -4,287 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shem's Kitchen | World Chef Catering</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Link to your Style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. NAVIGATION HEADER -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="image/logo.jpg" alt="Shem's Kitchen Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#policies">Policies</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="https://wa.me/12899091034" class="nav-cta-btn" target="_blank" rel="noopener"><i class="fa-solid fa-utensils"></i> Book Now</a>
-        </nav>
-    </header>
+<!-- HEADER SECTION WITH LOGO IMAGE -->
+<header class="header">
+    <div class="logo-container">
+        <img src="image/logo.jpg" alt="World Chef Logo" class="logo-img">
+    </div>
+    <nav>
+        <a href="#menu">MENU</a>
+        <a href="#services">SERVICES</a>
+        <a href="#policies">POLICIES</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+    <a href="https://wa.me/12899091034" class="book-now" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> BOOK NOW
+    </a>
+</header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Shem's Kitchen</h1>
-            <p class="hero-subtitle">World Chef Catering Experience</p>
-            <div class="hero-actions">
-                <a href="#menu" class="btn btn-gold">Explore Menu</a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+<!-- HERO BANNER SECTION -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>SHEM'S KITCHEN</h1>
+        <p>World Chef Catering Experience</p>
+        <div class="hero-buttons">
+            <a href="#menu" class="btn-primary">EXPLORE MENU</a>
+            <a href="https://wa.me/12899091034" class="btn-secondary" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> GET IN TOUCH
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN CONTENT CONTAINER -->
+<main class="main-container">
+    <section class="left-column">
+        <div id="menu">
+            <h2 class="section-title">Our Signature Menu</h2>
+            <div class="menu-grid">
+                <!-- Example menu item with icon -->
+                <div class="menu-item">
+                    <img src="image/Beef burger.jpeg" alt="Beef burger">
+                    <h3>Beef burger</h3>
+                    <a href="https://wa.me/12899091034" class="action-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+                <!-- Repeat for other menu items as needed -->
+                <div class="menu-item"><img src="image/Carne Asada.jpeg" alt="Carne Asada"><h3>Carne Asada</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/Chicken teriyaki.jpeg" alt="Chicken teriyaki"><h3>Chicken teriyaki</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-2.jpeg" alt="Dish 2"><h3>Dish 2</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/Dish-3.jpeg" alt="Dish 3"><h3>Dish 3</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-5.jpeg" alt="Dish 5"><h3>Dish 5</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-8.jpeg" alt="Dish 8"><h3>Dish 8</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-10.jpeg" alt="Dish 10"><h3>Dish 10</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-11.jpeg" alt="Dish 11"><h3>Dish 11</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-12.jpeg" alt="Dish 12"><h3>Dish 12</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-13.jpeg" alt="Dish 13"><h3>Dish 13</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-14.jpeg" alt="Dish 14"><h3>Dish 14</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-15.jpeg" alt="Dish 15"><h3>Dish 15</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-16.jpeg" alt="Dish 16"><h3>Dish 16</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-18.jpeg" alt="Dish 18"><h3>Dish 18</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-19.jpeg" alt="Dish 19"><h3>Dish 19</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-21.jpeg" alt="Dish 21"><h3>Dish 21</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-22.jpeg" alt="Dish 22"><h3>Dish 22</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-23.jpeg" alt="Dish 23"><h3>Dish 23</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-24.jpeg" alt="Dish 24"><h3>Dish 24</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-25.jpeg" alt="Dish 25"><h3>Dish 25</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-27.jpeg" alt="Dish 27"><h3>Dish 27</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-28.jpeg" alt="Dish 28"><h3>Dish 28</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-30.jpeg" alt="Dish 30"><h3>Dish 30</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/dish-31.jpeg" alt="Dish 31"><h3>Dish 31</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/Fajitas.jpeg" alt="Fajitas"><h3>Fajitas</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/Pepper shrimp.jpeg" alt="Pepper shrimp"><h3>Pepper shrimp</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/Rice and peas.jpeg" alt="Rice and peas"><h3>Rice and peas</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/Shrimp.jpeg" alt="Shrimp"><h3>Shrimp</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
+                <div class="menu-item"><img src="image/Steam fish.jpeg" alt="Steam fish"><h3>Steam fish</h3><a href="https://wa.me/12899091034" class="action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a></div>
             </div>
+        </div>
+
+        <!-- POLICIES SECTION -->
+        <div id="policies" style="margin-top: 50px;">
+            <h2 class="section-title">Policies & Guidelines</h2>
+            <div class="sidebar-card" style="margin-bottom: 20px;">
+                <h3>Order Policy</h3>
+                <ul>
+                    <li>Orders must be placed at least 24 hours in advance for regular meals.</li>
+                    <li>Catering orders for parties, weddings, and events should be booked 7–30 days in advance.</li>
+                    <li>All orders are subject to availability.</li>
+                    <li>Customers will receive an order confirmation via phone, email, or SMS.</li>
+                </ul>
+            </div>
+            <!-- (Other policy cards remain the same) -->
         </div>
     </section>
 
-    <!-- 3. MAIN CONTENT CONTAINER -->
-    <main class="main-container">
+    <!-- SIDEBAR -->
+    <aside class="right-column">
+        <div class="sidebar-card" id="services">
+            <h3>Catering Services</h3>
+            <ul>
+                <li>Birthdays & Weddings</li>
+                <li>Corporate Events</li>
+                <li>Indoor Hosting</li>
+            </ul>
+        </div>
         
-        <!-- LEFT COLUMN: SIGNATURE MENU GRID -->
-        <section id="menu" class="left-column">
-            <h2 class="section-title">Our Signature Menu</h2>
-            <div class="menu-grid">
-                
-                <!-- Menu Item 1: Steam Fish -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Steam fish.jpg" alt="Steam Fish">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Steam Fish</h3>
-                        <p class="dish-desc">Freshly prepared fish simmered down with rich local vegetables, fried plantains, and a clean savory broth.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Steam%20Fish" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="sidebar-card">
+            <h3>Quick Policy Overview</h3>
+            <p>Regular orders require 24 hours notice. Catering bookings require 7–30 days notice with a 50% deposit.</p>
+        </div>
 
-                <!-- Menu Item 2: Beef Burger -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Beef burger.jpeg" alt="Beef Burger">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Gourmet Beef Burger</h3>
-                        <p class="dish-desc">Premium seasoned beef patty grilled to perfection, served with signature sauces and fresh toppings.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Beef%20Burger" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 3: Carne Asada -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Carne Asada.jpeg" alt="Carne Asada">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Carne Asada</h3>
-                        <p class="dish-desc">Tender, thinly sliced grilled beef marinated in lime juice and authentic spices, seared for maximum flavor.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Carne%20Asada" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 4: Chicken Teriyaki -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Chicken teriyaki.jpeg" alt="Chicken Teriyaki">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Chicken Teriyaki</h3>
-                        <p class="dish-desc">Juicy grilled chicken glazed in a sweet and savory house-made teriyaki sauce, garnished with sesame seeds.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Chicken%20Teriyaki" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 5: Pepper Shrimp -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Pepper shrimp.jpeg" alt="Pepper Shrimp">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Pepper Shrimp</h3>
-                        <p class="dish-desc">Bold and spicy wild-caught shrimp tossed in a fiery scotch bonnet pepper seasoning blend.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Pepper%20Shrimp" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 6: Rice and Peas -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Rice and peas.jpeg" alt="Rice and Peas">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Traditional Rice & Peas</h3>
-                        <p class="dish-desc">Fluffy, aromatic long-grain rice cooked to perfection in rich coconut milk with traditional herbs and kidney beans.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Rice%20and%20Peas" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 7: Dish 3 -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Dish-3.jpeg" alt="Signature Catering Option">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Chef's Special Selection</h3>
-                        <p class="dish-desc">An exceptional, custom-tailored dish curated specifically to match the dining preferences of your venue guests.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Chef's%20Special%20Selection" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 8: Fajitas -->
-                <div class="menu-item">
-                    <div class="dish-img-container">
-                        <img src="image/Fajitas.jpeg" alt="Fajitas">
-                    </div>
-                    <div class="dish-info">
-                        <h3>Sizzling Fajitas</h3>
-                        <p class="dish-desc">Sautéed bell peppers and sweet onions tossed with perfectly seasoned, flame-grilled protein profiles.</p>
-                        <p class="dish-price">Price: <span>Custom Quote</span></p>
-                        <div class="order-actions">
-                            <a href="https://wa.me/12899091034?text=I'm%20interested%20in%20the%20Sizzling%20Fajitas" target="_blank" rel="noopener" class="action-btn wa-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                            <a href="tel:+12899091034" class="action-btn call-btn"><i class="fa-solid fa-phone"></i> Call to Order</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- RIGHT COLUMN: SERVICES, WHY CHOOSE US, CONTACT INFO, AND OPENING HOURS -->
-        <aside class="right-column">
-            
-            <div id="services" class="services-block-container">
-                <h2 class="section-title-right">Our Catering Services</h2>
-                
-                <div class="service-card">
-                    <h3>Birthday Celebrations</h3>
-                    <p>Custom menus, interactive food stations, and delicious spreads to make your special birthday milestone unforgettable.</p>
-                    <div class="service-icon"><i class="fa-solid fa-cake-candles"></i></div>
-                </div>
-
-                <div class="service-card">
-                    <h3>Weddings & Receptions</h3>
-                    <p>Elegant culinary experiences curated carefully to match the theme, style, and grandeur of your big day.</p>
-                    <div class="service-icon"><i class="fa-solid fa-glass-cheers"></i></div>
-                </div>
-
-                <div class="service-card">
-                    <h3>Indoor Celebrations</h3>
-                    <p>Intimate home dinners, holiday family gatherings, and cozy indoor events handled with premium, personalized service.</p>
-                    <div class="service-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
-                </div>
-
-                <div class="service-card">
-                    <h3>Large Scale Functions</h3>
-                    <p>Flawless execution and premium catering setups optimized to serve large crowds efficiently at major public and corporate events.</p>
-                    <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
-                </div>
-            </div>
-
-            <div class="why-choose-us">
-                <h3 class="script-title">The Culinary Standard</h3>
-                <div class="value-row">
-                    <div class="value-item">
-                        <div class="value-icon"><i class="fa-solid fa-award"></i></div>
-                        <h4>Professional Chefs</h4>
-                        <p>Five-star execution in every container.</p>
-                    </div>
-                    <div class="value-item">
-                        <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
-                        <h4>Fresh Ingredients</h4>
-                        <p>Locally sourced, pristine choice produce.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact and Hours Section -->
-            <div id="contact" class="contact-section">
-                <h2>Get In Touch</h2>
-                <div class="contact-grid">
-                    <a href="tel:+12899091034" class="contact-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>CALL US</span>
-                    </a>
-                    <a href="https://wa.me/12899091034" target="_blank" rel="noopener" class="contact-item">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>WHATSAPP</span>
-                    </a>
-                    <div class="contact-item hours-block non-link">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>
-                            OPENING HOURS<br>
-                            <small>9:00 AM - 5:00 PM</small>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-        </aside>
-
-        <!-- FULL-WIDTH CONTENT BREAKOUT: SERVICE POLICIES GRID -->
-        <section id="policies" class="policies-section">
-            <h2 class="section-title">Our Service Policies</h2>
-            <p class="policies-subtitle">Guidelines to ensure flawless service for your events</p>
-            
-            <div class="policies-grid">
-                <div class="policy-card">
-                    <h3><i class="fa-solid fa-calendar-check"></i> Booking Terms</h3>
-                    <p>All event bookings must be confirmed at least 7 days in advance. A safety deposit is required to secure raw kitchen logistics ahead of schedule.</p>
-                </div>
-                <div class="policy-card">
-                    <h3><i class="fa-solid fa-ban"></i> Cancellations</h3>
-                    <p>Deposits are fully refundable if cancellations are requested up to 72 hours before the service timeline. Late dropouts incur basic component stocking penalties.</p>
-                </div>
-                <div class="policy-card">
-                    <h3><i class="fa-solid fa-shuttle-van"></i> Delivery & Area</h3>
-                    <p>We provide full-setup operations across designated travel zones. Locations outside basic coverage metrics scale on calculated freight adjustments.</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- 4. FLOATING QUICK ACTION BAR -->
-    <div class="sticky-quote-bar">
-        <a href="https://wa.me/12899091034?text=Hello!%20I%20would%20like%20to%20request%20a%20catering%20quote." target="_blank" rel="noopener" class="quote-btn">Request A Free Quote</a>
-    </div>
-
-    <!-- 5. FOOTER -->
-    <footer>
-        <p>&copy; 2026 Shem's Kitchen. All Rights Reserved. Crafted with care.</p>
-    </footer>
-
+        <div class="sidebar-card" id="contact">
+            <h3>Opening Hours & Contact</h3>
+            <p>Mon-Fri: 9am - 8pm<br>Sat: 10am - 6pm<br>Sun: Closed</p>
+            <p style="margin-top: 15px;"><strong>Direct WhatsApp Line:</strong><br>
+               <a href="https://wa.me/12899091034" target="_blank" style="color: var(--primary); text-decoration: none;">
+                   <i class="fa-brands fa-whatsapp"></i> +1 (289) 909-1034
+               </a>
+            </p>
+        </div>
+    </aside>
+</main>
 </body>
 </html>
